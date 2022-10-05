@@ -1,0 +1,7 @@
+<idea-plugin package="com.pingCode.tasks">
+  <extensions defaultExtensionNs="com.intellij">
+<!--
+    <tasks.repositoryType implementation="com.pingCode.tasks.GiteeRepositoryType"/>
+-->
+  </extensions>
+</idea-plugin>
