@@ -1,7 +1,6 @@
 // Copyright 2000-2020 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 package com.pingCode.authentication.ui
 
-import PingCodeApiRequestExecutor
 import com.pingCode.api.PingCodeServerPath
 import com.pingCode.authentication.PCCredentials
 import com.pingCode.authentication.util.PingCodeCredentialsCreator
@@ -13,6 +12,7 @@ import com.intellij.ui.AnimatedIcon
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.layout.LayoutBuilder
 import com.intellij.util.ui.UIUtil.getInactiveTextColor
+import com.pingCode.api.PingCodeApiRequestExecutor
 import com.pingCode.authentication.util.Validator
 import javax.swing.JComponent
 

@@ -1,4 +1,4 @@
-package com.pingCode.api;
+package com.pingCode.api.data;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

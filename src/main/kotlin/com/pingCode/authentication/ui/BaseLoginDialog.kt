@@ -12,6 +12,7 @@ import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.DialogWrapper.IS_VISUAL_PADDING_COMPENSATED_ON_COMPONENT_LEVEL_KEY
 import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.openapi.util.Disposer
+import com.pingCode.api.PingCodeApiRequestExecutor
 import com.pingCode.api.PingCodeServerPath
 import com.pingCode.authentication.PCCredentials
 import java.awt.Component

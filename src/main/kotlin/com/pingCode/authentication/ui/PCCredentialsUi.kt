@@ -2,13 +2,13 @@
 package com.pingCode.authentication.ui
 
 
-import PingCodeApiRequestExecutor
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.ui.layout.LayoutBuilder
 import com.intellij.ui.layout.panel
 import com.intellij.util.ui.JBEmptyBorder
 import com.intellij.util.ui.UIUtil.getRegularPanelInsets
+import com.pingCode.api.PingCodeApiRequestExecutor
 import com.pingCode.api.PingCodeServerPath
 import com.pingCode.authentication.PCCredentials
 import com.pingCode.authentication.util.Validator

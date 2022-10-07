@@ -1,6 +1,5 @@
 package com.pingCode.authentication.ui
 
-import PingCodeApiRequestExecutor
 import com.pingCode.api.PingCodeApiRequests
 import com.pingCode.api.PingCodeServerPath
 import com.pingCode.authentication.PCCredentials
@@ -14,6 +13,7 @@ import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.components.fields.ExtendableTextField
 import com.intellij.ui.layout.LayoutBuilder
+import com.pingCode.api.PingCodeApiRequestExecutor
 import com.pingCode.authentication.util.Validator
 import java.net.UnknownHostException
 import javax.swing.JComponent

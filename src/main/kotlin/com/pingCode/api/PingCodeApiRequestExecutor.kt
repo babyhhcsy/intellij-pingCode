@@ -1,8 +1,9 @@
-import PingCodeApiRequestExecutor.Factory.Companion.PCtInstance
+package com.pingCode.api
+
 import com.intellij.openapi.diagnostic.logger
 import com.pingCode.api.*
 import com.pingCode.api.PingCodeServerPath.Companion.from
-
+import com.pingCode.api.PingCodeApiRequestExecutor.Factory.Companion.getInstance
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.components.service
 import com.intellij.openapi.progress.DumbProgressIndicator
@@ -15,6 +16,7 @@ import com.intellij.util.concurrency.annotations.RequiresBackgroundThread
 import com.intellij.util.io.HttpRequests
 import com.intellij.util.io.HttpSecurityUtil
 import com.intellij.util.io.RequestBuilder
+import com.pingCode.api.data.PingCodeErrorMessage
 import com.pingCode.authentication.PCCredentials
 import com.pingCode.authentication.util.PingCodeCredentialsCreator
 import com.pingCode.exceptions.*
@@ -84,7 +86,7 @@ sealed class PingCodeApiRequestExecutor {
                     try {
                         PingCodeCredentialsCreator(
                             from(request.url.substringBefore('?')),
-                            PCtInstance().create(),
+                            getInstance().create(),
                             DumbProgressIndicator()
                         ).refresh(credentials.refreshToken)
                     } catch (ie: PingCodeAuthenticationException) {
@@ -313,7 +315,7 @@ sealed class PingCodeApiRequestExecutor {
 
         companion object {
             @JvmStatic
-            fun PCtInstance(): Factory = service()
+            fun getInstance(): Factory = service()
         }
     }
 

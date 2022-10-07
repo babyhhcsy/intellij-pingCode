@@ -16,7 +16,7 @@
 
 package com.pingCode.exceptions;
 
-import com.pingCode.api.PingCodeErrorMessage;
+import com.pingCode.api.data.PingCodeErrorMessage;
 import org.jetbrains.annotations.Nullable;
 
 /**

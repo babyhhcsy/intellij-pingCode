@@ -1,5 +1,9 @@
 package com.pingCode.ui.util
 
+import com.intellij.openapi.ui.ValidationInfo
+import com.pingCode.authentication.util.Validator
+import javax.swing.JTextField
+
 /**
  * @author Yuyou Chow
  *

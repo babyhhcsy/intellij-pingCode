@@ -1,4 +1,5 @@
 package com.pingCode.authentication.ui
+import com.intellij.collaboration.async.CompletableFutureUtil.completionOnEdt
 import com.intellij.openapi.components.service
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
@@ -9,6 +10,7 @@ import com.intellij.ui.components.fields.ExtendableTextComponent
 import com.intellij.ui.components.fields.ExtendableTextField
 import com.intellij.ui.components.panels.Wrapper
 import com.intellij.ui.layout.LayoutBuilder
+import com.pingCode.api.PingCodeApiRequestExecutor
 import java.util.concurrent.CompletableFuture
 import javax.swing.JComponent
 import javax.swing.JPasswordField
@@ -17,7 +19,6 @@ import javax.swing.JTextField
 import com.pingCode.api.PingCodeServerPath
 import com.pingCode.authentication.PCCredentials
 import com.pingCode.authentication.accounts.PCAccountsUtils
-import com.pingCode.authentication.util.completionOnEdt
 import com.pingCode.authentication.util.errorOnEdt
 import com.pingCode.authentication.util.submitIOTask
 import com.pingCode.i18n.PingCodeBundle.message
@@ -125,17 +126,16 @@ class PingCodeLoginPanel(
     }
   }
 
-//  fun setLogin(login: String?, editable: Boolean) {
+  fun setLogin(login: String?, editable: Boolean) {
 //    passwordUi.setLogin(login.orEmpty(), editable)
 //    oauthUi.setFixedLogin(if (editable) null else login)
-//  }
-//
-//  fun setCredentials(credentials: PCCredentials?) {
-//    credentials ?.let {
-//      oauthUi.setFixedCredentials(credentials)
-//      refreshTokenUi.setFixedCredentials(credentials)
-//    }
-//  }
+  }
+  fun setCredentials(credentials: PCCredentials?) {
+    credentials ?.let {
+      //oauthUi.setFixedCredentials(credentials)
+      refreshTokenUi.setFixedCredentials(credentials)
+    }
+  }
 
   fun setError(exception: Throwable?) {
     tokenAcquisitionError = exception?.let {

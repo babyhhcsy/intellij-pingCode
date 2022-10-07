@@ -15,6 +15,14 @@
     <depends>com.intellij.modules.lang</depends>
     <depends>Git4Idea</depends>
     <depends optional="true" config-file="pingCode.tracker.xml">com.intellij.tasks</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <httpRequestHandler implementation="com.pingCode.authentication.accounts.PCOAuthCallbackHandler"/>
+        <applicationService serviceImplementation="com.pingCode.authentication.accounts.PCPersistentAccounts"/>
+        <projectService serviceImplementation="com.pingCode.authentication.accounts.PingCodeProjectDefaultAccountHolder"/>
+        <applicationService serviceImplementation="com.pingCode.api.PingCodeApiRequestExecutor$Factory"/>
+        <applicationService serviceImplementation="com.pingCode.util.PingCodeSettings"/>
+        <applicationService serviceImplementation="com.pingCode.authentication.PingCodeAuthenticationManager"/>
+    </extensions>
     <actions>
         <action id="pingCode.create.bug" class="com.pingCode.actions.PingCodeCreateBugAction">
             <add-to-group group-id="EditorPopupMenu"/>

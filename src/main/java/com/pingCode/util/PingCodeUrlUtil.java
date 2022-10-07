@@ -1,6 +1,7 @@
 package com.pingCode.util;
 
 import com.intellij.openapi.util.text.StringUtil;
+import com.pingCode.api.PCRepositoryPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -108,7 +109,7 @@ public class PingCodeUrlUtil {
      * git@gitee.com:user/repo.git -> user/repo
      */
     @Nullable
-    public static GERepositoryPath getUserAndRepositoryFromRemoteUrl(@NotNull String remoteUrl) {
+    public static PCRepositoryPath getUserAndRepositoryFromRemoteUrl(@NotNull String remoteUrl) {
         remoteUrl = removeProtocolPrefix(removeEndingDotGit(remoteUrl));
         int index1 = remoteUrl.lastIndexOf('/');
         if (index1 == -1) {
@@ -124,7 +125,7 @@ public class PingCodeUrlUtil {
         if (username.isEmpty() || reponame.isEmpty()) {
             return null;
         }
-        return new GERepositoryPath(username, reponame);
+        return new PCRepositoryPath(username, reponame);
     }
 
     @NotNull
@@ -139,7 +140,7 @@ public class PingCodeUrlUtil {
 
     @Nullable
     public static String makeGiteeRepoUrlFromRemoteUrl(@NotNull String remoteUrl, @NotNull String host) {
-        GERepositoryPath repo = getUserAndRepositoryFromRemoteUrl(remoteUrl);
+        PCRepositoryPath repo = getUserAndRepositoryFromRemoteUrl(remoteUrl);
         if (repo == null) {
             return null;
         }
